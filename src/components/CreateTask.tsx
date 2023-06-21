@@ -2,7 +2,7 @@ import { PlusCircle } from "@phosphor-icons/react";
 
 import styles from "./CreateTask.module.css";
 
-export function CreateTask() {
+export function NewTask() {
   return (
     <form className={styles.newTask}>
       <input type="text" placeholder="Adicione uma nova tarefa" />
