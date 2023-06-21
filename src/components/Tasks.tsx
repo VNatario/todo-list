@@ -1,3 +1,5 @@
+import { ClipboardText } from "@phosphor-icons/react";
+
 import styles from "./Tasks.module.css";
 
 export function Tasks() {
@@ -16,7 +18,14 @@ export function Tasks() {
           </p>
         </div>
       </div>
-      <div>Empty</div>
+
+      <div className={styles.emptyList}>
+        <ClipboardText size={56} />
+        <p>
+          <strong>Você ainda não tem tarefas cadastradas</strong>
+          Crie tarefas e organize seus itens a fazer
+        </p>
+      </div>
     </>
   );
 }
