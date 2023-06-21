@@ -1,6 +1,6 @@
 import { PlusCircle } from "@phosphor-icons/react";
 
-import styles from "./CreateTask.module.css";
+import styles from "./NewTask.module.css";
 
 export function NewTask() {
   return (

@@ -1,0 +1,26 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .createdTask p,
+.info .completedTasks p {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.info .createdTask p {
+  color: var(--blue-200);
+}
+
+.info .completedTasks p {
+  color: var(--purple-300);
+}
+
+.info span {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
