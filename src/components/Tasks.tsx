@@ -11,9 +11,10 @@ export interface TaskType {
 
 interface TasksProps {
   tasks: TaskType[];
+  checkedTask: (id: string) => void;
 }
 
-export function Tasks({ tasks }: TasksProps) {
+export function Tasks({ tasks, checkedTask }: TasksProps) {
   return (
     <>
       <div className={styles.info}>
@@ -41,7 +42,7 @@ export function Tasks({ tasks }: TasksProps) {
       ) : (
         <div className={styles.list}>
           {tasks.map((task) => {
-            return <Task key={task.id} task={task} />;
+            return <Task key={task.id} task={task} checkedTask={checkedTask} />;
           })}
         </div>
       )}
