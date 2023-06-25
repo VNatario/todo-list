@@ -4,7 +4,7 @@ import styles from "./Tasks.module.css";
 import { Task } from "./Task";
 
 export interface TaskType {
-  id: number;
+  id: string;
   content: string;
   isComplete: boolean;
 }

@@ -8,7 +8,6 @@ interface TaskProps {
 }
 
 export function Task({ task }: TaskProps) {
-  console.log(task);
   return (
     <div className={task.isComplete ? styles.taskComplete : styles.task}>
       <button className={styles.check}>
