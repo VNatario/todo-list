@@ -31,9 +31,12 @@ export function App() {
       }
     });
 
-    console.log(taskChecked);
-
     setTasks(taskChecked);
+  }
+
+  function deleteTask(id: string) {
+    const tasksWithoutOne = tasks.filter((task) => task.id !== id);
+    setTasks(tasksWithoutOne);
   }
 
   return (
@@ -42,7 +45,11 @@ export function App() {
       <div className={styles.wrapper}>
         <NewTask createTask={createTask} />
         <main>
-          <Tasks tasks={tasks} checkedTask={checkedTask} />
+          <Tasks
+            tasks={tasks}
+            checkedTask={checkedTask}
+            deleteTask={deleteTask}
+          />
         </main>
       </div>
     </>

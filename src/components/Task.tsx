@@ -6,11 +6,16 @@ import { TaskType } from "./Tasks";
 interface TaskProps {
   task: TaskType;
   checkedTask: (id: string) => void;
+  deleteTask: (id: string) => void;
 }
 
-export function Task({ task, checkedTask }: TaskProps) {
+export function Task({ task, checkedTask, deleteTask }: TaskProps) {
   function handleChecked() {
     checkedTask(task.id);
+  }
+
+  function handleDeleteTask() {
+    deleteTask(task.id);
   }
 
   return (
@@ -19,7 +24,7 @@ export function Task({ task, checkedTask }: TaskProps) {
         <Check weight="bold" size={12} />
       </button>
       <p>{task.content}</p>
-      <button className={styles.trash}>
+      <button className={styles.trash} onClick={handleDeleteTask}>
         <Trash size={20} />
       </button>
     </div>
