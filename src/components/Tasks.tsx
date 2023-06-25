@@ -16,18 +16,25 @@ interface TasksProps {
 }
 
 export function Tasks({ tasks, checkedTask, deleteTask }: TasksProps) {
+  const tasksComplete = tasks.filter((task) => task.isComplete);
+
   return (
     <>
       <div className={styles.info}>
         <div className={styles.createdTask}>
           <p>
-            Tarefas criadas <span>0</span>
+            Tarefas criadas <span>{tasks.length}</span>
           </p>
         </div>
 
         <div className={styles.completedTasks}>
           <p>
-            Concluídas <span>0</span>
+            Concluídas{" "}
+            <span>
+              {tasks.length === 0
+                ? tasks.length
+                : `${tasksComplete.length} de ${tasks.length}`}
+            </span>
           </p>
         </div>
       </div>
