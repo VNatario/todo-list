@@ -3,7 +3,17 @@ import { ClipboardText } from "@phosphor-icons/react";
 import styles from "./Tasks.module.css";
 import { Task } from "./Task";
 
-export function Tasks({ task = true }: any) {
+export interface TaskType {
+  id: number;
+  content: string;
+  isComplete: boolean;
+}
+
+interface TasksProps {
+  tasks: TaskType[];
+}
+
+export function Tasks({ tasks }: TasksProps) {
   return (
     <>
       <div className={styles.info}>
@@ -20,7 +30,7 @@ export function Tasks({ task = true }: any) {
         </div>
       </div>
 
-      {!task ? (
+      {tasks.length === 0 ? (
         <div className={styles.emptyList}>
           <ClipboardText size={56} />
           <p>
@@ -30,7 +40,9 @@ export function Tasks({ task = true }: any) {
         </div>
       ) : (
         <div className={styles.list}>
-          <Task />
+          {tasks.map((task) => {
+            return <Task key={task.id} task={task} />;
+          })}
         </div>
       )}
     </>

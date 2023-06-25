@@ -1,4 +1,5 @@
-.task {
+.task,
+.taskComplete {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -10,14 +11,15 @@
   background-color: var(--gray-500);
 }
 
-.task button {
+.task button,
+.taskComplete button {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
 
 .task .check,
-.task .checked {
+.taskComplete .check {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,39 +29,48 @@
   height: 1.25rem;
   color: var(--gray-100);
 
+  border: 2px solid var(--blue-200);
+
   transition: all 300ms;
 }
 
-.task .check {
-  border: 2px solid var(--blue-200);
-}
-
-.task .check svg {
+.check svg {
   opacity: 0;
 }
 
-.task .check:hover {
+.check:hover {
   border-color: var(--blue-700);
   background-color: var(--blue-700-alpha-02);
 }
 
-.task .checked {
-  border: 2px solid var(--purple-500);
+.taskComplete .check {
+  border-color: var(--purple-500);
   background-color: var(--purple-500);
 }
 
-.task .checked:hover {
-  border: 2px solid var(--purple-300);
+.taskComplete .check svg {
+  opacity: 1;
+}
+
+.taskComplete .check:hover {
+  border-color: var(--purple-300);
   background-color: var(--purple-300);
 }
 
-.task p {
+.task p,
+.taskComplete p {
   font-size: 0.875rem;
   color: var(--gray-100);
   line-height: 1.4;
+  flex: 1;
 }
 
-.task .trash {
+.taskComplete p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.trash {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +81,7 @@
   transition: all 200ms;
 }
 
-.task .trash:hover {
+.trash:hover {
   color: var(--red-200);
   background-color: var(--gray-400);
 }
