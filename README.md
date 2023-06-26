@@ -50,4 +50,4 @@ yarn dev
 ```
 
 ##### O servidor inciará na porta:5173 
-Acesse (http://localhost:5173)[http://localhost:5173]
+Acesse [http://localhost:5173](http://localhost:5173)
